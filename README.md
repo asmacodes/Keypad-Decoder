@@ -1,20 +1,9 @@
 # Keypad-Decoder
-This code is a keypad decoder implemented in Python. The purpose of the code is to convert a string of digits into a corresponding text message based on a provided mapping dictionary.
+This code is a keypad decoder implemented in Python. It is designed to convert a string of digits into a text message using a provided mapping dictionary. The code consists of two functions:
 
-The code consists of two functions: same_chars() and get_txt_msg().
 
-The same_chars() function checks whether all characters in a string are the same. It iterates through each character in the input string and compares it to the first character. If any character is different or the length of the string is less than 1, the function returns False. Otherwise, it returns True. This function is used to validate if a string of digits has the same characters.
+1)same_chars(characters): This function checks if all characters in a given string are the same. It takes a string (characters) as input and returns a boolean value (True if all characters are the same, False otherwise).
 
-The get_txt_msg() function is the main part of the code. It takes two parameters: str_of_digits (the input string of digits) and mapping_dictionary (a dictionary that maps each digit to a list of corresponding letters or words).
+2)get_txt_msg(str_of_digits, mapping_dictionary): This function converts a string of digits to a text message using a mapping dictionary. It takes two arguments: str_of_digits, which is the input string of digits, and mapping_dictionary, which is the dictionary used for mapping digits to corresponding letters. The function iterates through the digits in the input string, performing various checks. If any of the checks fail, a ValueError is raised. If all checks pass, the function retrieves the corresponding letter from the mapping dictionary based on the first digit of the current group of digits and appends it to the sentence. The resulting text message is returned at the end.
 
-The function starts by initializing an empty string called sentence to store the resulting text message. The input string of digits is split into a list of individual digit strings using the split() method.
-
-Next, the function iterates through each element (digit string) in the list. For each digit, it performs several checks. It verifies if the digit is in the mapping dictionary and if all characters in the digit string are the same and numeric. If these conditions are met, it retrieves the list of letters corresponding to the digit from the mapping dictionary. It then selects the letter based on the length of the digit string and appends it to the sentence string.
-
-If any of the checks fail, indicating an invalid input string, the function raises a ValueError with an appropriate error message.
-
-Finally, the function returns the resulting sentence string, which represents the decoded text message.
-
-The code includes some examples as docstrings, demonstrating how to use the functions and providing expected output for different input scenarios.
-
-Overall, this code provides a simple and efficient way to convert a string of digits into a text message using a mapping dictionary. It can be useful for applications involving keypads or numerical input methods for generating text messages.
+The code includes informative docstrings that describe the purpose of each function, the arguments they accept, the expected return values, and any potential exceptions that can be raised. This helps users understand how to use the code and what to expect from it.
